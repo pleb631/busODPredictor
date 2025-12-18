@@ -2,10 +2,11 @@
 
 defaults:
   - _self_
-  - data: mnist # choose datamodule with `test_dataloader()` for evaluation
-  - model: mnist
-  - logger: null
-  - trainer: default
+  - data: od
+  - model: tgcn
+  - callbacks: time
+  - logger: tensorboard # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - trainer: time
   - paths: default
   - extras: default
   - hydra: default
@@ -15,4 +16,4 @@ task_name: "eval"
 tags: ["dev"]
 
 # passing checkpoint path is necessary for evaluation
-ckpt_path: ???
+ckpt_path: D:\project\busODPredict\busODPredictor\logs\train\runs\2025-12-18_15-56-13\checkpoints\last.ckpt

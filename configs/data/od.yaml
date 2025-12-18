@@ -1,0 +1,9 @@
+_target_: src.data.time_datamodule.TimeDataModule
+data_dir: ${paths.data_dir}
+batch_size: 64 # Needs to be divisible by the number of devices (e.g., if in a distributed setup)
+num_workers: 0
+pin_memory: True
+train_csv: "../data/processed/train.csv"
+val_csv: "../data/processed/val.csv"
+input_window: 14
+output_window: 1

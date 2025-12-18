@@ -4,11 +4,11 @@
 # order of defaults determines the order in which configs override each other
 defaults:
   - _self_
-  - data: mnist
-  - model: mnist
-  - callbacks: default
-  - logger: null # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
-  - trainer: default
+  - data: od
+  - model: tgcn
+  - callbacks: time
+  - logger: tensorboard # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - trainer: time
   - paths: default
   - extras: default
   - hydra: default
@@ -46,4 +46,4 @@ test: True
 ckpt_path: null
 
 # seed for random number generators in pytorch, numpy and python.random
-seed: null
+seed: 0

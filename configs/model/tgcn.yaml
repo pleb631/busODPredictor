@@ -1,0 +1,21 @@
+_target_: src.models.time_module.TimeLitModule
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.01
+  weight_decay: 1e-6
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.CosineAnnealingLR
+  _partial_: true
+  T_max: 100
+  eta_min: 1e-5
+
+net:
+  _target_: src.models.components.tgcn.TGCN
+  dim_in: 12
+
+
+# compile model for faster training with pytorch 2.0
+compile: false
